@@ -96,26 +96,34 @@ function validate(event) {
 	let inputIsCorrect = true;
 	if (!firstNameController()) {
 		inputIsCorrect = false;
+		console.log('first name incorrect');
 	}
 	if (!lastNameController()) {
 		inputIsCorrect = false;
+		console.log('last name incorrect');
 	}
 	if (!emailController()) {
 		inputIsCorrect = false;
+		console.log('email incorrect');
 	}
 	if (!birthdateController()) {
 		inputIsCorrect = false;
+		console.log('birthDate incorrect');
 	}
 	if (!quantityController()) {
 		inputIsCorrect = false;
+		console.log('Quantity not specified ');
 	}
 	if (!locationController()) {
 		inputIsCorrect = false;
+		console.log('Location is not selected');
 	}
 	if (!termsOfUseController()) {
 		inputIsCorrect = false;
+		console.log('terms of use is not checked');
 	}
 	if (inputIsCorrect) {
 		formIsValid();
+		console.log('Validé!!')
 	}
 }
