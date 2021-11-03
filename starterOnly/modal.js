@@ -10,11 +10,11 @@ const form = document.querySelector("form");
 const modalConfirmation = document.querySelector(".modal-confirmation");
 
 function editNav() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
+  var myTopnav = document.getElementById("myTopnav");
+  if (myTopnav.className === "topnav") {
+    myTopnav.className += " responsive";
   } else {
-    x.className = "topnav";
+    myTopnav.className = "topnav";
   }
 }
 
@@ -89,6 +89,30 @@ function locationController() {
 function termsOfUseController() {
   return termsOfUse.checked;
 }
+
+// launch registration confirmed message
+function registrationConfirmed() {
+	modalbg.style.display = "none";
+	modalConfirmation.style.display = "block";
+  }
+  
+  // close registration confirmed message
+  function closeRegistrationConfirmed() {
+	  closeConfirmation.addEventListener("click", () => {
+		  modalConfirmation.style.display = "none";
+	  });
+	  btnClose.addEventListener("click", () => {
+		  modalConfirmation.style.display = "none";
+	  });
+  }
+  
+  //If form is valid
+  function formIsValid() {
+	//launch modal confirmation
+	  registrationConfirmed();
+	//close modal confirmation
+	  closeRegistrationConfirmed();
+  }
 
 //Valid form if inputs are correct
 function validate(event) {
