@@ -62,7 +62,9 @@
                      onsubmit="return validate(event);"
                      >
                      <div
-                        class="formData" show-error-message="false">
+                        class="formData"
+                        id="firstNameData"
+                        show-error-message="false">
                         <label for="first">Prénom</label><br>
                         <input
                            class="text-control"
@@ -74,7 +76,8 @@
                            /><br>
                      </div>
                      <div
-                        class="formData">
+                        class="formData"
+                        id="lastNameData">
                         <label for="last">Nom</label><br>
                         <input
                            class="text-control"
@@ -86,7 +89,8 @@
                            /><br>
                      </div>
                      <div
-                        class="formData">
+                        class="formData"
+                        id="emailData">
                         <label for="email">E-mail</label><br>
                         <input
                            class="text-control"
@@ -97,7 +101,8 @@
                            /><br>
                      </div>
                      <div
-                        class="formData">
+                        class="formData"
+                        id="birthDateData">
                         <label for="birthdate">Date de naissance</label><br>
                         <input
                            class="text-control"
@@ -108,13 +113,15 @@
                            /><br>
                      </div>
                      <div
-                        class="formData">
+                        class="formData"
+                        id="quantityData">
                         <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label><br>
                         <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99" >
                      </div>
                      <p class="text-label">Quelles villes ?</p>
                      <div
-                        class="formData">
+                        class="formData"
+                        id="locationData">
                         <input
                            class="checkbox-input"
                            type="radio"
@@ -183,7 +190,8 @@
                         Portland</label>
                      </div>
                      <div
-                        class="formData">
+                        class="formData"
+                        id="termsOfUseData">
                         <input
                            class="checkbox-input"
                            type="checkbox"

@@ -120,34 +120,47 @@ function validate(event) {
 	let inputIsCorrect = true;
 	if (!firstNameController()) {
 		inputIsCorrect = false;
-		console.log('first name incorrect');
+		let firstNameData = document.querySelector('#firstNameData');
+		firstNameData.setAttribute("data-error-visible", true);
+		firstNameData.setAttribute("data-error", message = "Veuillez entrer 2 caractères ou plus (hors chiffres et caractères spéciaux)");
 	}
 	if (!lastNameController()) {
 		inputIsCorrect = false;
-		console.log('last name incorrect');
+		let lastNameData = document.querySelector('#lastNameData');
+		lastNameData.setAttribute("data-error-visible", true);
+		lastNameData.setAttribute("data-error", message = "Veuillez entrer 2 caractères ou plus (hors chiffres et caractères spéciaux)");
 	}
 	if (!emailController()) {
 		inputIsCorrect = false;
-		console.log('email incorrect');
+		let emailData = document.querySelector('#emailData');
+		emailData.setAttribute("data-error-visible", true);
+		emailData.setAttribute("data-error", message = "Veuillez renseigner une adresse email valide");
 	}
 	if (!birthdateController()) {
 		inputIsCorrect = false;
-		console.log('birthDate incorrect');
+		let birthDateData = document.querySelector('#birthDateData');
+		birthDateData.setAttribute("data-error-visible", true);
+		birthDateData.setAttribute("data-error", message = "Vous devez entrer votre date de naissance(18 ans requis pour participer)");
 	}
 	if (!quantityController()) {
 		inputIsCorrect = false;
-		console.log('Quantity not specified ');
+		let quantityData = document.querySelector('#quantityData');
+		quantityData.setAttribute("data-error-visible", true);
+		quantityData.setAttribute("data-error", message = "Veuillez renseigner un nombre compris entre 0 et 99");
 	}
 	if (!locationController()) {
 		inputIsCorrect = false;
-		console.log('Location is not selected');
+		let locationData = document.querySelector('#locationData');
+		locationData.setAttribute("data-error-visible", true);
+		locationData.setAttribute("data-error", message = "Veuillez choisir une option");
 	}
 	if (!termsOfUseController()) {
 		inputIsCorrect = false;
-		console.log('terms of use is not checked');
+		let termsOfUseData = document.querySelector('#termsOfUseData');
+		termsOfUseData.setAttribute("data-error-visible", true);
+		termsOfUseData.setAttribute("data-error", message = "Vous devez accepter les conditions d'utilisations");
 	}
 	if (inputIsCorrect) {
 		formIsValid();
-		console.log('Validé!!')
 	}
 }
