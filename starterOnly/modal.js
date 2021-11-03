@@ -96,28 +96,37 @@ function registrationConfirmed() {
 	modalConfirmation.style.display = "block";
   }
   
-  // close registration confirmed message
-  function closeRegistrationConfirmed() {
-	  closeConfirmation.addEventListener("click", () => {
+// close registration confirmed message
+function closeRegistrationConfirmed() {
+	closeConfirmation.addEventListener("click", () => {
+		modalConfirmation.style.display = "none";
+	});
+	btnClose.addEventListener("click", () => {
 		  modalConfirmation.style.display = "none";
-	  });
-	  btnClose.addEventListener("click", () => {
-		  modalConfirmation.style.display = "none";
-	  });
-  }
+	});
+}
   
-  //If form is valid
-  function formIsValid() {
-	//launch modal confirmation
-	  registrationConfirmed();
-	//close modal confirmation
-	  closeRegistrationConfirmed();
-  }
+//If form is valid
+function formIsValid() {
+//launch modal confirmation
+	registrationConfirmed();
+//close modal confirmation
+	closeRegistrationConfirmed();
+}
+
+//delete alerts if inputs are corrected
+function removeAlerts() {
+	let invalidInputs = document.querySelectorAll('.formData[data-error-visible="true"]');
+	for (let input of invalidInputs) {
+		input.setAttribute("data-error-visible", false);
+	}
+}
 
 //Valid form if inputs are correct
 function validate(event) {
 	event.preventDefault();
 	let inputIsCorrect = true;
+	removeAlerts();
 	if (!firstNameController()) {
 		inputIsCorrect = false;
 		let firstNameData = document.querySelector('#firstNameData');
