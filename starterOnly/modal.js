@@ -10,21 +10,21 @@ const form = document.querySelector("form");
 const modalConfirmation = document.querySelector(".modal-confirmation");
 
 function editNav() {
-  var myTopnav = document.getElementById("myTopnav");
-  if (myTopnav.className === "topnav") {
-    myTopnav.className += " responsive";
-  } else {
-    myTopnav.className = "topnav";
-  }
+	var myTopnav = document.getElementById("myTopnav");
+	if (myTopnav.className === "topnav") {
+		myTopnav.className += " responsive";
+	} else {
+		myTopnav.className = "topnav";
+	}
 }
 
 // launch modal form
 function launchModal() {
-  modalbg.style.display = "block";
+	modalbg.style.display = "block";
 }
 //close modal form
 function closeModal() {
-    modalbg.style.display = "none";  
+	modalbg.style.display = "none";
 }
 
 // launch modal event
@@ -51,66 +51,66 @@ function firstNameController() {
 }
 //control lastname input
 function lastNameController() {
-  regex = /^[-'a-zA-ZÀ-ÖØ-öø-ÿ ]{2,20}$/;
+	regex = /^[-'a-zA-ZÀ-ÖØ-öø-ÿ ]{2,20}$/;
 	return regex.test(lastName.value);
 }
 //control email input
 function emailController() {
-  regex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
+	regex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
 	return regex.test(email.value);
 }
 //control birthdate
-function birthdateController(){
-  let birthdate = new Date(birthDate.value);
-  let todaySDate = new Date();
-  if (todaySDate.getFullYear() - birthdate.getFullYear() < 18) {
-    console.log("vous n'êtes pas majeur!")
-    return false;
-  }else if(todaySDate.getFullYear() - birthdate.getFullYear() > 150){
-      console.log("les vampires n'existent pas :'D désolé tu t'es probalement trompé ;)")
-      return false
-  }else if(todaySDate.getFullYear() - birthdate.getFullYear() >= 18 && todaySDate.getFullYear() - birthdate.getFullYear() < 150){
-    return true
-  }
+function birthdateController() {
+	let birthdate = new Date(birthDate.value);
+	let todaySDate = new Date();
+	if (todaySDate.getFullYear() - birthdate.getFullYear() < 18) {
+		console.log("vous n'êtes pas majeur!")
+		return false;
+	} else if (todaySDate.getFullYear() - birthdate.getFullYear() > 150) {
+		console.log("les vampires n'existent pas :'D désolé tu t'es probalement trompé ;)")
+		return false
+	} else if (todaySDate.getFullYear() - birthdate.getFullYear() >= 18 && todaySDate.getFullYear() - birthdate.getFullYear() < 150) {
+		return true
+	}
 }
 //control tournaments quantity
 function quantityController() {
-  regex = /^[0-9]+$/;
+	regex = /^[0-9]+$/;
 	return regex.test(quantity.value);
 }
 //control location
 function locationController() {
-  for (let radio of chooseLocation) {
+	for (let radio of chooseLocation) {
 		if (radio.checked === true) return true;
 	}
 	return false;
 }
 //control if terms of use checked
 function termsOfUseController() {
-  return termsOfUse.checked;
+	return termsOfUse.checked;
 }
 
 // launch registration confirmed message
 function registrationConfirmed() {
 	modalbg.style.display = "none";
 	modalConfirmation.style.display = "block";
-  }
-  
+}
+
 // close registration confirmed message
 function closeRegistrationConfirmed() {
 	closeConfirmation.addEventListener("click", () => {
 		modalConfirmation.style.display = "none";
 	});
 	btnClose.addEventListener("click", () => {
-		  modalConfirmation.style.display = "none";
+		modalConfirmation.style.display = "none";
 	});
 }
-  
+
 //If form is valid
 function formIsValid() {
-//launch modal confirmation
+	//launch modal confirmation
 	registrationConfirmed();
-//close modal confirmation
+	//close modal confirmation
 	closeRegistrationConfirmed();
 }
 
