@@ -169,6 +169,7 @@ main {
 .modal-confirmation-message{
   min-height: 10px;
   padding: 60% 2%;
+  text-align: center;
 }
 
 .content {
@@ -212,13 +213,13 @@ input {
 }
 .formData[data-error]::after {
   content: attr(data-error);
-  font-size: 0.4em;
+  font-size: 0.5em;
   color: #e54858;
   display: block;
   margin-top: 7px;
   margin-bottom: 7px;
-  text-align: right;
-  line-height: 0.3;
+  text-align: left;
+  line-height: 0.4;
   opacity: 0;
   transition: 0.3s;
 }
@@ -412,31 +413,34 @@ input[data-error]::after {
   font-size: 16px;
 }
 .hero-section {
-  position: relative;
   min-height: 93vh;
   border-radius: 10px;
   display: grid;
-  grid-template-columns: 45% 55%;
+  grid-template-columns: repeat(12, 1fr);
   overflow: hidden;
   box-shadow: 0 2px 7px 2px rgba(0, 0, 0, 0.2);
   margin-bottom: 10px;
 }
 .hero-content {
-  padding: 51px 67px;
-  grid-column: 1;
+  padding-left: 67px;
+  grid-column: span 4;
   background: #232323;
   color: #fff;
   position: relative;
-  text-align: center;
+  text-align: left;
   min-width: 424px;
+  display: flex;
+  flex-direction: column;
+  justify-content:space-evenly;
 }
+
 .hero-content::after {
   content: "";
   width: 100%;
   height: 100%;
   background: #232323;
   position: absolute;
-  right: -80px;
+  right: -50px;
   top: 0;
 }
 
@@ -445,8 +449,9 @@ input[data-error]::after {
   z-index: 1;
 }
 .hero-headline {
-  font-size: 5rem;
+  font-size: 6rem;
   font-weight: normal;
+  white-space: nowrap;
 }
 .hero-text {
   font-weight: normal;
@@ -460,7 +465,7 @@ input[data-error]::after {
   margin-top: 59px;
 }
 .hero-img {
-  grid-column: 2;
+  grid-column: span 8;
 }
 .hero-img img {
   width: 100%;
@@ -504,6 +509,7 @@ footer {
   .hero-headline {
     font-size: 3rem;
     white-space: normal;
+    text-align: center;
   }
   .hero-text {
     width: unset;
