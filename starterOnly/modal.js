@@ -116,9 +116,9 @@ function formIsValid() {
 
 //delete alerts if inputs are corrected
 function removeAlerts() {
-	let invalidInputs = document.querySelectorAll('.formData[data-error-visible="true"]');
+	let invalidInputs = document.querySelectorAll('.formData[data-error-visible="true"]'); // keep inputs with error attribute true
 	for (let input of invalidInputs) {
-		input.setAttribute("data-error-visible", false);
+		input.setAttribute("data-error-visible", false); // turn error attribute to false
 	}
 }
 
@@ -127,48 +127,56 @@ function validate(event) {
 	event.preventDefault();
 	let inputIsCorrect = true;
 	removeAlerts();
+	// if firstNameInput is incorrect
 	if (!firstNameController()) {
 		inputIsCorrect = false;
-		let firstNameData = document.querySelector('#firstNameData');
-		firstNameData.setAttribute("data-error-visible", true);
+		let firstNameData = document.querySelector('#firstNameData'); 
+		firstNameData.setAttribute("data-error-visible", true); // set error Attribute true and display error message
 		firstNameData.setAttribute("data-error", message = "Veuillez entrer 2 caractères ou plus (hors chiffres et caractères spéciaux)");
 	}
+	// if lastNameInput is incorrect
 	if (!lastNameController()) {
 		inputIsCorrect = false;
 		let lastNameData = document.querySelector('#lastNameData');
-		lastNameData.setAttribute("data-error-visible", true);
+		lastNameData.setAttribute("data-error-visible", true); // set error Attribute and display error message
 		lastNameData.setAttribute("data-error", message = "Veuillez entrer 2 caractères ou plus (hors chiffres et caractères spéciaux)");
 	}
+	// if email input is incorrect
 	if (!emailController()) {
 		inputIsCorrect = false;
 		let emailData = document.querySelector('#emailData');
-		emailData.setAttribute("data-error-visible", true);
+		emailData.setAttribute("data-error-visible", true); // set error Attribute and display error message
 		emailData.setAttribute("data-error", message = "Veuillez renseigner une adresse email valide");
 	}
+	// if birthDate input is incorrect
 	if (!birthdateController()) {
 		inputIsCorrect = false;
 		let birthDateData = document.querySelector('#birthDateData');
-		birthDateData.setAttribute("data-error-visible", true);
+		birthDateData.setAttribute("data-error-visible", true); // set error Attribute and display error message
 		birthDateData.setAttribute("data-error", message = "Vous devez entrer votre date de naissance(18 ans requis pour participer)");
 	}
+	// if quantity input is incorrect
 	if (!quantityController()) {
 		inputIsCorrect = false;
 		let quantityData = document.querySelector('#quantityData');
-		quantityData.setAttribute("data-error-visible", true);
+		quantityData.setAttribute("data-error-visible", true); // set error Attribute and display error message
 		quantityData.setAttribute("data-error", message = "Veuillez renseigner un nombre compris entre 0 et 99");
 	}
+	// if location isn't selected
 	if (!locationController()) {
 		inputIsCorrect = false;
 		let locationData = document.querySelector('#locationData');
-		locationData.setAttribute("data-error-visible", true);
+		locationData.setAttribute("data-error-visible", true); // set error Attribute and display error message
 		locationData.setAttribute("data-error", message = "Veuillez choisir une option");
 	}
+	// if terms aren't checked
 	if (!termsOfUseController()) {
 		inputIsCorrect = false;
 		let termsOfUseData = document.querySelector('#termsOfUseData');
-		termsOfUseData.setAttribute("data-error-visible", true);
+		termsOfUseData.setAttribute("data-error-visible", true); // set error Attribute and display error message
 		termsOfUseData.setAttribute("data-error", message = "Vous devez accepter les conditions d'utilisations");
 	}
+	// if inputs are correct call formIsValid()
 	if (inputIsCorrect) {
 		formIsValid();
 	}
